@@ -1,19 +1,20 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Apache
 %define	pnam	ConfigFile
 Summary:	Apache::ConfigFile - Parse an Apache style httpd.conf config file
 Summary(pl):	Apache::ConfigFile - analiza pliku konfiguracyjnego httpd.conf w stylu Apache
 Name:		perl-Apache-ConfigFile
-Version:	0.14
-Release:	2
-License:	GPL/Artistic
+Version:	1.18
+Release:	1
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1869fdcf46b36c8788a2b62d8a6dd3db
-BuildRequires:	perl-devel >= 5.6
+#Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/N/NW/NWIGER/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	0a7e1e1aca947f98a9a974150b722bff
+BuildRequires:	perl-devel >= 5.8
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,12 +41,13 @@ funkcji cmd_config() i cmd_context() do odczytywania informacji.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
