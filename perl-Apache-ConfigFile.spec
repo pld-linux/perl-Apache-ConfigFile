@@ -35,7 +35,7 @@ funkcji cmd_config() i cmd_context() do odczytywania informacji.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %{!?_without_tests:%{__make} test}
