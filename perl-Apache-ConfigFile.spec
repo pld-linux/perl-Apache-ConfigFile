@@ -5,7 +5,7 @@
 %define	pdir	Apache
 %define	pnam	ConfigFile
 Summary:	Apache::ConfigFile - Parse an Apache style httpd.conf config file
-#Summary(pl):	
+Summary(pl):	Apache::ConfigFile - analiza pliku konfiguracyjnego httpd.conf w stylu Apache
 Name:		perl-Apache-ConfigFile
 Version:	0.14
 Release:	1
@@ -19,13 +19,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This module parses the Apache httpd.conf, or any compatible config
-file, and provides methods for you to access the values from the config
-file. The above examples show basic usage of this module, which boils
-down to reading a given config file and then using the C<cmd_config()>
-and C<cmd_context()> functions to access its information.
+file, and provides methods for you to access the values from the
+config file. The basic usage of this module boils down to reading a
+given config file and then using the cmd_config() and cmd_context()
+functions to access its information.
 
-# %description -l pl
-# TODO
+%description -l pl
+Ten modu³ analizuje plik Apache'a httpd.conf lub dowolny kompatybilny
+plik konfiguracyjny i udostêpnia metody pozwalaj±ce na dostêp do
+warto¶ci z tego pliku. Podstawowe u¿ywanie tego modu³u sprowadza siê
+do przeczytania podanego pliku konfiguracyjnego, a nastêpnie u¿ywania
+funkcji cmd_config() i cmd_context() do odczytywania informacji.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
