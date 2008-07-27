@@ -8,7 +8,7 @@ Summary:	Apache::ConfigFile - parse an Apache style httpd.conf config file
 Summary(pl.UTF-8):	Apache::ConfigFile - analiza pliku konfiguracyjnego httpd.conf w stylu Apache
 Name:		perl-Apache-ConfigFile
 Version:	1.18
-Release:	1
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 #Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
