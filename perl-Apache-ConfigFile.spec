@@ -1,9 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Apache
 %define		pnam	ConfigFile
+%include	/usr/lib/rpm/macros.perl
 Summary:	Apache::ConfigFile - parse an Apache style httpd.conf config file
 Summary(pl.UTF-8):	Apache::ConfigFile - analiza pliku konfiguracyjnego httpd.conf w stylu Apache
 Name:		perl-Apache-ConfigFile
@@ -14,6 +15,7 @@ Group:		Development/Languages/Perl
 #Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Source0:	http://www.cpan.org/modules/by-authors/id/N/NW/NWIGER/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	0a7e1e1aca947f98a9a974150b722bff
+URL:		http://search.cpan.org/dist/Apache-ConfigFile/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
