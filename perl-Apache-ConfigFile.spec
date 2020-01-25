@@ -4,7 +4,6 @@
 
 %define		pdir	Apache
 %define		pnam	ConfigFile
-%include	/usr/lib/rpm/macros.perl
 Summary:	Apache::ConfigFile - parse an Apache style httpd.conf config file
 Summary(pl.UTF-8):	Apache::ConfigFile - analiza pliku konfiguracyjnego httpd.conf w stylu Apache
 Name:		perl-Apache-ConfigFile
